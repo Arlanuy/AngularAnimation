@@ -27,17 +27,42 @@ import { Component } from '@angular/core';
 
           <ul class="navbar-nav mr-auto">
 
-              <li class="nav-item"> 
+            <li class="nav-item"> 
 
-                  <a class="nav-link">Home</a>
+            <a class="nav-link" routerLink="/animation-home" routerLinkActive="active">Home</a>
 
-              </li>
+            </li>
+
+            <li class="nav-item">
+
+                <a class="nav-link" routerLink="/animation-basics" routerLinkActive="active">Basics</a>
+
+            </li>
+
+            <li class="nav-item">
+
+                <a class="nav-link" routerLink="/animation-contained" routerLinkActive="active">Contained</a>
+
+            </li>
+
+            <li class="nav-item">
+
+                <a class="nav-link" routerLink="/animation-advanced" routerLinkActive="active">Advanced</a>
+
+            </li>
 
           </ul>
 
       </div>
 
     </nav>
+
+    
+    <div class="page">
+
+    <router-outlet></router-outlet>
+
+    </div>
 
     `,
 
