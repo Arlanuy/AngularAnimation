@@ -21,9 +21,10 @@ import { Component } from '@angular/core';
 
                 <a (click)="setState('easing')" class="btn btn-primary">Animation with Ease</a>
                 
-<a (click)="setState('stepped')" class="btn btn-primary">Stepped Animation</a>
+                <a (click)="setState('stepped')" class="btn btn-primary">Stepped Animation</a>
+                <a (click)="setState('parallel')" class="btn btn-primary">Parallel Animation</a>
                 </div>
-
+            </div>
             <div class="col-7">
               <animbox [currentState]="switchstate"></animbox>
             </div>
