@@ -15,6 +15,7 @@ import { AdvancedComponent } from './routes/advanced.component';
 
 import { NotFoundComponent } from './routes/notfound.component';
 
+import { AnimboxComponent } from './animbox.component';
 const animationRoutes:Routes = [
 
   {
@@ -71,6 +72,7 @@ const animationRoutes:Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    AnimboxComponent,
     HomeComponent,
     BasicComponent,
     ContainedComponent,

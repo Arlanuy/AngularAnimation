@@ -11,10 +11,19 @@ import { Component } from '@angular/core';
 
         <div class="row">
 
-            <div class="col-5"></div>
+            <div class="col-5">
+              <div class="btn-group-vertical btn-block" style="margin-top:1rem;">
 
-            <div class="col-7"></div>
+                <a (click)="setState('original')" class="btn btn-primary active">Return to Original</a>
+            
+                <a (click)="setState('basic')" class="btn btn-primary">Animation</a>
+            
+            </div>
 
+            <div class="col-7">
+              <animbox [currentState]="switchstate"></animbox>
+            </div>
+            
         </div>
 
     </div>
@@ -24,4 +33,15 @@ import { Component } from '@angular/core';
 
 })
 
-export class BasicComponent {}
+export class BasicComponent {
+  
+  switchstate = 'original';
+
+  setState(state:string) {
+
+    this.switchstate = state;
+
+    console.log(state);
+
+  }
+}
