@@ -42,14 +42,33 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 
             backgroundColor: '#440000',
 
-            transform: 'scale(2)'
+            transform: 'scale(1.9)'
+
+        })),
+
+        state('delaying', style({
+
+            backgroundColor: '#812170',
+
+            transform: 'scale(1.6)'
+
+        })),
+
+        state('easing', style({
+
+            backgroundColor: '#985b00',
+
+            transform: 'scale(1.8)'
 
         })),
 
         transition('* => basic', animate('800ms')),
 
-        transition('* => original', animate('200ms'))
+        transition('* => original', animate('200ms')),
 
+        transition('* => delaying', animate('800ms 1200ms ease-out')),
+
+        transition('* => easing', animate('800ms ease-in-out'))
     ])
 
 ]

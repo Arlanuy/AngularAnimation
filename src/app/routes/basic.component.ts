@@ -17,7 +17,9 @@ import { Component } from '@angular/core';
                 <a (click)="setState('original')" class="btn btn-primary active">Return to Original</a>
             
                 <a (click)="setState('basic')" class="btn btn-primary">Animation</a>
-            
+                <a (click)="setState('delaying')" class="btn btn-primary">Animation with Delay</a>
+
+                <a (click)="setState('easing')" class="btn btn-primary">Animation with Ease</a>
             </div>
 
             <div class="col-7">
