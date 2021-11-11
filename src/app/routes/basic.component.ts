@@ -20,7 +20,9 @@ import { Component } from '@angular/core';
                 <a (click)="setState('delaying')" class="btn btn-primary">Animation with Delay</a>
 
                 <a (click)="setState('easing')" class="btn btn-primary">Animation with Ease</a>
-            </div>
+                
+<a (click)="setState('stepped')" class="btn btn-primary">Stepped Animation</a>
+                </div>
 
             <div class="col-7">
               <animbox [currentState]="switchstate"></animbox>
