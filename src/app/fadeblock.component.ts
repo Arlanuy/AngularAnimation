@@ -32,7 +32,7 @@ import { fadeAnimation } from './animations';
 
                 margin: 5rem;
 
-                opacity: 1;
+                opacity: 0.25;
 
             }
 
@@ -52,9 +52,9 @@ import { fadeAnimation } from './animations';
 
                         delay: '3000ms',
 
-                        from: 0,
+                        from: 1,
 
-                        to: 1,
+                        to: 0,
 
                         time: '1s'
 
