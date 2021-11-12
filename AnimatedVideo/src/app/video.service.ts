@@ -15,7 +15,7 @@ export class VideoService {
   public isMuted:boolean = false;
   public isPlaying:boolean = false;
   public isDragging:boolean = false;
-  public showDetails:boolean = false;
+  public showDetails:string = "false";
   public currentDesc:string = "A very nice video...";
   public playlist:Array<Object> = [];
 
@@ -27,6 +27,24 @@ export class VideoService {
     this.videoElement.addEventListener("timeupdate", this.updateTime);
     window.setInterval(this.timerFired, 500);
   }
+
+  checkHidden = () => {
+
+    var isHidden:string = "false";
+
+    if(this.isPlaying) {
+
+        isHidden = "true";
+
+    }else{
+
+        isHidden = "false";
+
+    }
+
+    return isHidden;
+
+};
 
   gatherJSON = () => {
       this.http.get('./assets/data/playlist.json')
@@ -45,7 +63,7 @@ export class VideoService {
       this.videoElement.src = this.playlist[i]['path'];
       this.videoElement.play();
       this.isPlaying = true;
-      this.showDetails = false;
+      this.showDetails = "false";
   };
 
   seekVideo(e:any) {
@@ -107,10 +125,10 @@ export class VideoService {
   };
 
   details() {
-      if(this.showDetails == false){
-          this.showDetails = true;
+      if(this.showDetails == "false"){
+          this.showDetails = "true";
       }else{
-          this.showDetails = false;
+          this.showDetails = "false";
       }
   };
 

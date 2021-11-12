@@ -12,16 +12,25 @@ import { VideoService } from './video.service';
 
 import { TimeDisplayPipe } from "./timedisplay.pipe";
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { PlayOverlayComponent } from './playoverlay.component';
+
+import { VideoTitleComponent } from './videotitle.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     ProgressComponent,
     ToolbarComponent,
     OptionsComponent,
-    TimeDisplayPipe
+    TimeDisplayPipe,
+    PlayOverlayComponent,
+    VideoTitleComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule
   ],
