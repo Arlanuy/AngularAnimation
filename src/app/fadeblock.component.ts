@@ -46,7 +46,21 @@ import { fadeAnimation } from './animations';
 
             transition('void => *', [
 
-                useAnimation(fadeAnimation)
+                useAnimation(fadeAnimation, {
+
+                    params: {
+
+                        delay: '3000ms',
+
+                        from: 0,
+
+                        to: 1,
+
+                        time: '1s'
+
+                    }
+
+                })
 
             ])
 

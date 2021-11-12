@@ -6,13 +6,13 @@ export var fadeAnimation = animation([
 
     style({
 
-        opacity: "0"
+        opacity: "{{ from }}"
 
     }),
 
-    animate("800ms 300ms ease-in-out", style({
+    animate("{{time}} {{delay}} ease-in-out", style({
 
-        opacity: "1"
+        opacity: "{{ to }}"
 
     }))
 
