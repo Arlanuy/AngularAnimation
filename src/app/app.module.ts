@@ -16,6 +16,9 @@ import { AdvancedComponent } from './routes/advanced.component';
 import { NotFoundComponent } from './routes/notfound.component';
 
 import { AnimboxComponent } from './animbox.component';
+import { MouseComponent } from './mouse.component';
+import {FadeBlockComponent} from './fadeblock.component'
+
 const animationRoutes:Routes = [
 
   {
@@ -76,7 +79,9 @@ const animationRoutes:Routes = [
     HomeComponent,
     BasicComponent,
     ContainedComponent,
-    AdvancedComponent
+    AdvancedComponent,
+    MouseComponent,
+    FadeBlockComponent
   ],
   imports: [
     BrowserModule,

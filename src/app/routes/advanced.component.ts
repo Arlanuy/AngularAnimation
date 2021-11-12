@@ -13,7 +13,7 @@ import { Component } from '@angular/core';
 
                 <div class="col-12">
 
-                    <div></div>
+                    <fadeblock></fadeblock>
 
                 </div>
 

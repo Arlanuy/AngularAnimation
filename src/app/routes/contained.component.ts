@@ -11,7 +11,9 @@ import { Component } from '@angular/core';
 
       <div class="row">
 
-          <div class="col-12"></div>
+          <div class="col-12">
+          <mouse></mouse>
+          </div>
 
       </div>
 
