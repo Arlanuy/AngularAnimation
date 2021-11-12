@@ -3,6 +3,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { trigger, transition } from '@angular/animations';
 
 import { slideAnimation } from './animations';
+import { dissolveAnimation } from './animations';
 
 
 @Component({
@@ -75,7 +76,7 @@ import { slideAnimation } from './animations';
     animations: [
 
         trigger('routerAnimations', [
-
+            transition('* => *', slideAnimation),
             transition('* => *', slideAnimation)
 
         ])

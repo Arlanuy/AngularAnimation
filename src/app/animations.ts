@@ -26,3 +26,8 @@ export var slideAnimation = animation([
     animate('400ms ease-in-out', style({ opacity: 1, transform: 'translate3d(0%,0,0)' })),
 
 ])
+
+export var dissolveAnimation = animation([
+    style({opacity: 0}),
+    animate('400ms ease-in-out', style({opacity: 1})),
+])
