@@ -55,3 +55,53 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
             margin-top: 1.5rem;
 
         }
+
+        `
+
+    ],
+
+    animations: [
+
+        trigger('hiddenChanged', [
+
+            state('false', style({
+
+                opacity: 1,
+
+                transform: 'translate(-50%, -50%) scale(1)',
+
+                backgroundColor: 'rgba(0, 0, 0, 0.8)'
+
+            })),
+
+            state('true', style({
+
+                opacity: 0,
+
+                transform: 'translate(-50%, -50%) scale(2)',
+
+                backgroundColor: 'rgba(81, 7, 0, 0.8)'
+
+            })),
+
+            transition('true => false', animate('100ms ease-out')),
+
+            transition('false => true', animate('800ms ease-out')),
+
+            transition('void => *', [
+
+                animate(1000, style({opacity:1}))
+
+            ])
+
+        ])
+
+    ]
+
+
+})
+
+export class PlayOverlayComponent {
+
+    @Input() isHidden:string = 'false';
+}

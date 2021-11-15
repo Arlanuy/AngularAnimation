@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 import { VideoService } from "./video.service";
 
 @Component({
     selector: 'video-options',
     template: `
-    <div id="VideoOptions" [hidden]="!videoService.showDetails" class="card">
+    <div [@hiddenChanged]="isHidden" id="VideoOptions" class="card">
         <div class="panel-heading">
             <h1 class="panel-title">{{videoService.currentTitle}}</h1>
         </div>
@@ -21,8 +22,42 @@ import { VideoService } from "./video.service";
             </div>
         </div>
     </div>
-    `
+    `,
+
+    animations: [
+
+        trigger('hiddenChanged', [
+
+            state('true', style({
+
+                opacity: 1,
+
+                transform: 'translateX(0%)'
+
+            })),
+
+            state('false', style({
+
+                opacity: 0,
+
+                transform: 'translateX(100%)'
+
+            })),
+
+            transition('false => true', animate('100ms ease-out')),
+
+            transition('true => false', animate('400ms ease-in'))
+
+        ])
+
+    ]
+
 })
 export class OptionsComponent {
     constructor(public videoService:VideoService) {}
+
+    @Input() isHidden:string = 'true';
+
 }
+
+
