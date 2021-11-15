@@ -12,7 +12,7 @@ import { VideoService } from './video.service';
 
 import { TimeDisplayPipe } from "./timedisplay.pipe";
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PlayOverlayComponent } from './playoverlay.component';
 
@@ -31,6 +31,7 @@ import { VideoTitleComponent } from './videotitle.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    NoopAnimationsModule,
     FormsModule,
     HttpModule
   ],

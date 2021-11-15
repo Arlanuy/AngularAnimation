@@ -1,10 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {VideoService} from "./video.service";
 
 @Component({
     selector: 'video-toolbar',
     template: `
-    <div id="playerToolBar">
+    <div id="playerToolBar" [@hiddenChanged]="isHidden">
         <a id="playBtn" class="btn btn-default" (click)="videoService.playVideo()">
         	  <i [ngClass]="{'fa-play': !videoService.isPlaying, 'fa-pause': videoService.isPlaying}" class="fa"></i>
         </a>
@@ -23,4 +23,5 @@ import {VideoService} from "./video.service";
 })
 export class ToolbarComponent {
     constructor(public videoService:VideoService) {}
+    @Input() public isHidden:string = 'true';
 }

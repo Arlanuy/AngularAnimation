@@ -4,7 +4,7 @@ import { VideoService } from "./video.service";
 @Component({
   selector: 'app-root',
   template: `
-      <div id="fullPlayer" (mouseup)="videoService.dragStop($event)" (mousemove)="videoService.dragMove($event)" (mouseleave)="videoService.dragStop($event)">
+      <div id="fullPlayer" (mouseup)="videoService.dragStop($event)" (mousemove)="videoService.dragMove($event)" (mouseleave)="videoService.dragStop($event)" (mouseover)="videoService.showTools='true'" (mouseout)="videoService.showTools='false'">
           <div class="embed-responsive embed-responsive-16by9">
               <video id="videoDisplay" muted (click)="videoService.playVideo()" width="100%" height="100%" class="embed-responsive-item"></video>
               <play-overlay [isHidden]="videoService.checkHidden()" (click)="videoService.playVideo()"></play-overlay>
@@ -12,7 +12,7 @@ import { VideoService } from "./video.service";
               <video-options [isHidden]="videoService.showDetails"></video-options>
           </div>
           <video-progress></video-progress>
-          <video-toolbar></video-toolbar>
+          <video-toolbar [isHidden]="videoService.showTools"></video-toolbar>
       </div>
   `
 })

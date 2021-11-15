@@ -19,6 +19,8 @@ export class VideoService {
   public currentDesc:string = "A very nice video...";
   public playlist:Array<Object> = [];
 
+  public showTools:string ="false";
+
   constructor(private http:Http) {}
 
   appSetup(v:string) {
@@ -143,5 +145,15 @@ export class VideoService {
           this.videoElement.msRequestFullscreen();
       }
   };
+
+  tools() {
+      if (this.showTools == 'false') {
+          this.showTools = 'true';
+      }
+
+      else {
+          this.showTools = 'false';
+      }
+  }
 
 }
